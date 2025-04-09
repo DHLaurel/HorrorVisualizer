@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://27lhtm4vhyol"]
+
+[ext_resource type="Shader" path="res://visualizer/node_template/node_template.gdshader" id="1_u0uut"]
+[ext_resource type="Script" path="res://visualizer/edge_template/edge_template.gd" id="2_1q17p"]
+
+[sub_resource type="Gradient" id="Gradient_cwsyq"]
+colors = PackedColorArray(0, 0, 0, 0.619608, 0.286275, 0.0509804, 0, 0.588235)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vdxht"]
+gradient = SubResource("Gradient_cwsyq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ryhw"]
+render_priority = 0
+shader = ExtResource("1_u0uut")
+shader_parameter/time_speed = 0.16
+shader_parameter/glitch_intensity = -1.305
+shader_parameter/noise_scale = 5.015
+shader_parameter/color_shift = Vector3(0.1, -0.1, 0)
+shader_parameter/texture_albedo = SubResource("GradientTexture1D_vdxht")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rlxom"]
+material = SubResource("ShaderMaterial_6ryhw")
+
+[node name="EdgeTemplate" type="MeshInstance3D"]
+mesh = SubResource("CylinderMesh_rlxom")
+script = ExtResource("2_1q17p")

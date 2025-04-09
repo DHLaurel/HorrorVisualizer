@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c88mh0li4ysca"]
+
+[ext_resource type="Script" path="res://camera_controller/camera_controller.gd" id="1_u8ror"]
+[ext_resource type="Texture2D" uid="uid://bbwf8itswx4q4" path="res://icon.svg" id="2_qvmbn"]
+[ext_resource type="PackedScene" uid="uid://b37w41nh2tdot" path="res://interactor/interactor.tscn" id="3_hmo21"]
+
+[node name="CameraController" type="Camera3D" node_paths=PackedStringArray("interactor")]
+script = ExtResource("1_u8ror")
+interactor = NodePath("Interactor")
+
+[node name="CrosshairSprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, -0.1)
+visible = false
+texture = ExtResource("2_qvmbn")
+region_enabled = true
+region_rect = Rect2(56, 56, 16, 24)
+
+[node name="Interactor" parent="." instance=ExtResource("3_hmo21")]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1pbfxarfkbqg"]
+
+[ext_resource type="Script" path="res://visualizer/visualizer.gd" id="1_g3628"]
+[ext_resource type="PackedScene" uid="uid://27lhtm4vhyol" path="res://visualizer/edge_template/edge_template.tscn" id="2_bdn70"]
+[ext_resource type="PackedScene" uid="uid://caob475v64kde" path="res://visualizer/node_template/node_template.tscn" id="3_bipqa"]
+
+[node name="Visualizer" type="Node3D"]
+script = ExtResource("1_g3628")
+
+[node name="EdgeTemplate" parent="." instance=ExtResource("2_bdn70")]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, -1, 0, 0)
+
+[node name="NodeTemplate" parent="." instance=ExtResource("3_bipqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)

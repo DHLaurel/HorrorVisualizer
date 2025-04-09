@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b77kppsghffqd"]
+
+[ext_resource type="Script" path="res://hud/hud.gd" id="1_t1ryc"]
+[ext_resource type="FontFile" uid="uid://dgaco5l078lm4" path="res://assets/fonts/endor/ENDOR___.ttf" id="2_y14hf"]
+
+[sub_resource type="FontVariation" id="FontVariation_e2joq"]
+base_font = ExtResource("2_y14hf")
+variation_transform = Transform2D(1, 0.3, 0, 1, 0, 0)
+spacing_glyph = 4
+spacing_space = 2
+
+[sub_resource type="Theme" id="Theme_i5aeh"]
+default_font = SubResource("FontVariation_e2joq")
+default_font_size = 64
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1ryc")
+
+[node name="InteractionLabel" type="Label" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -61.0
+offset_right = 107.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_i5aeh")
+text = "TEST"

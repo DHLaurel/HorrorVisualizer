@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://qvqsdfukt1s6"]
+
+[ext_resource type="PackedScene" uid="uid://b1pbfxarfkbqg" path="res://visualizer/visualizer.tscn" id="1_8as0g"]
+[ext_resource type="Script" path="res://global.gd" id="1_exo30"]
+[ext_resource type="PackedScene" uid="uid://c88mh0li4ysca" path="res://camera_controller/camera_controller.tscn" id="2_rmcyl"]
+[ext_resource type="PackedScene" uid="uid://b77kppsghffqd" path="res://hud/hud.tscn" id="4_6decj"]
+[ext_resource type="Shader" path="res://visualizer/node_template/node_template.gdshader" id="5_bfe63"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_4tkef"]
+albedo = Color(0.366595, 0.366595, 0.366595, 1)
+edge_fade = 1.65642
+
+[sub_resource type="Gradient" id="Gradient_u3ofn"]
+colors = PackedColorArray(0, 0, 0, 1, 0.359069, 0.359069, 0.359069, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ypm3k"]
+gradient = SubResource("Gradient_u3ofn")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_couwn"]
+render_priority = -5
+next_pass = SubResource("FogMaterial_4tkef")
+shader = ExtResource("5_bfe63")
+shader_parameter/time_speed = 1.0
+shader_parameter/glitch_intensity = 0.5
+shader_parameter/noise_scale = 50.0
+shader_parameter/color_shift = Vector3(0.1, -0.1, 0)
+shader_parameter/texture_albedo = SubResource("GradientTexture2D_ypm3k")
+
+[sub_resource type="SphereMesh" id="SphereMesh_te3uy"]
+material = SubResource("ShaderMaterial_couwn")
+flip_faces = true
+radius = 100.0
+height = 100.0
+
+[node name="Global" type="Node3D" node_paths=PackedStringArray("visualizer", "camera_controller", "hud")]
+script = ExtResource("1_exo30")
+visualizer = NodePath("Visualizer")
+camera_controller = NodePath("CameraController")
+hud = NodePath("CanvasLayer/HUD")
+
+[node name="Visualizer" parent="." instance=ExtResource("1_8as0g")]
+
+[node name="CameraController" parent="." instance=ExtResource("2_rmcyl")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_6decj")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.912741, 0.282892, 0.457738, 1)
+
+[node name="Background Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_te3uy")
