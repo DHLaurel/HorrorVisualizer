@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://interactor/interactor.gd" id="1_ef5l3"]
 
 [node name="Interactor" type="RayCast3D"]
-target_position = Vector3(0, 0, -1)
+target_position = Vector3(0, 0, -3)
 collision_mask = 16
 hit_from_inside = true
 hit_back_faces = false

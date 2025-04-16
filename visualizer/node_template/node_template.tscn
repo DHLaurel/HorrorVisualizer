@@ -1,32 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://caob475v64kde"]
+[gd_scene load_steps=10 format=3 uid="uid://caob475v64kde"]
 
 [ext_resource type="Script" path="res://visualizer/node_template/node_template.gd" id="1_35cd2"]
 [ext_resource type="Shader" path="res://visualizer/node_template/node_template.gdshader" id="1_y27cj"]
+[ext_resource type="Texture2D" uid="uid://dtc1m4aonxe1v" path="res://visualizer/node_template/highlighted_albedo.tres" id="2_acxdj"]
+[ext_resource type="Texture2D" uid="uid://ctp4om5qi7dvo" path="res://visualizer/node_template/normal_albedo.tres" id="2_w0pmb"]
+[ext_resource type="Texture2D" uid="uid://bawfitnlm83bb" path="res://visualizer/node_template/darkened_albedo.tres" id="4_kskuj"]
+[ext_resource type="AudioStream" uid="uid://dfgfvflrl72ey" path="res://visualizer/node_template/heart-beat-6797.mp3" id="6_fl2ao"]
 
-[sub_resource type="Gradient" id="Gradient_40j8w"]
-colors = PackedColorArray(0.117427, 0.0816446, 0.087544, 1, 0.527876, 0.384557, 0.215418, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_i0bu6"]
-gradient = SubResource("Gradient_40j8w")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0famp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqxex"]
 render_priority = 0
 shader = ExtResource("1_y27cj")
 shader_parameter/time_speed = 1.0
 shader_parameter/glitch_intensity = 0.5
 shader_parameter/noise_scale = 50.0
 shader_parameter/color_shift = Vector3(0, 0, 0)
-shader_parameter/texture_albedo = SubResource("GradientTexture1D_i0bu6")
+shader_parameter/texture_albedo = ExtResource("2_w0pmb")
 
 [sub_resource type="SphereMesh" id="SphereMesh_sivl7"]
-material = SubResource("ShaderMaterial_0famp")
+material = SubResource("ShaderMaterial_jqxex")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c4ocd"]
 radius = 0.2
 
-[node name="NodeTemplate" type="MeshInstance3D"]
+[node name="NodeTemplate" type="MeshInstance3D" groups=["Node"]]
 mesh = SubResource("SphereMesh_sivl7")
 script = ExtResource("1_35cd2")
+darkened_albedo = ExtResource("4_kskuj")
+highlighted_albedo = ExtResource("2_acxdj")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 16
@@ -34,6 +34,9 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_c4ocd")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_fl2ao")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

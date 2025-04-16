@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://ddg3myjp0armu"
+path="res://.godot/imported/1-runtime-map-building.map-e65bd86488ebb864a4b2854b04c88c1d.tres"
+
+[deps]
+
+source_file="res://qodot/example_scenes/2-miscallaneous/1-runtime-map-building/1-runtime-map-building.map"
+dest_files=["res://.godot/imported/1-runtime-map-building.map-e65bd86488ebb864a4b2854b04c88c1d.tres"]
+
+[params]
+

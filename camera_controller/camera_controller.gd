@@ -4,6 +4,7 @@ class_name CameraController extends Camera3D
 @export var move_speed: float = 5.0
 @export var mouse_sensitivity: float = 0.3
 @export var shift_multiplier: float = 2.0
+@export var flying: bool = false
 
 @export var interactor:Interactor
 
@@ -48,6 +49,8 @@ func _process(delta):
 	# Normalize direction to prevent faster diagonal movement
 	if direction.length() > 0:
 		direction = direction.normalized()
+		if not flying:
+			pass
 	
 	# Apply movement
 	translate(direction * speed * delta)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm1spk62yyoqr"]
+
+[ext_resource type="PackedScene" uid="uid://bp64crgg7gl6p" path="res://structures/hallway.fbx" id="1_355at"]
+[ext_resource type="Material" uid="uid://cpd7yaylpct3b" path="res://structures/textures/walls_ceiling.tres" id="2_gcmdo"]
+[ext_resource type="Texture2D" uid="uid://cshuyxat1wpeh" path="res://qodot/textures/pbr/military-panel/military-panel_ao.png" id="2_s2n2y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wax4"]
+albedo_color = Color(0.115813, 0.0461831, 0.187952, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwspu"]
+albedo_color = Color(0.198494, 0.0986409, 0.0740076, 1)
+metallic = 0.38
+roughness_texture = ExtResource("2_s2n2y")
+
+[node name="hallway" instance=ExtResource("1_355at")]
+
+[node name="Floor" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5wax4")
+
+[node name="CeilingWalls" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_gcmdo")
+
+[node name="Cube" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_gcmdo")
+
+[node name="Wood_001" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rwspu")

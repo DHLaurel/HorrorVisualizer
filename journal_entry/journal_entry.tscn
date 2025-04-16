@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://deadydnlxq258"]
+
+[ext_resource type="Script" path="res://journal_entry/journal_entry.gd" id="1_l04h8"]
+[ext_resource type="PackedScene" uid="uid://dcq7vfr7rvhlm" path="res://journal_entry/folder.fbx" id="1_wcntb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l7pmj"]
+radius = 0.4
+
+[node name="JournalEntry" type="Node3D"]
+script = ExtResource("1_l04h8")
+highlighted_games = Array[String](["Silent Hill", "Doom", "Resident Evil"])
+text = "Secret Folder"
+
+[node name="folder" parent="." instance=ExtResource("1_wcntb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_l7pmj")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

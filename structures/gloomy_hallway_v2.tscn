@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy5tycrb5jjfj"]
+
+[ext_resource type="PackedScene" uid="uid://dm1spk62yyoqr" path="res://structures/hallway_local.tscn" id="1_vpb2a"]
+[ext_resource type="PackedScene" uid="uid://deadydnlxq258" path="res://journal_entry/journal_entry.tscn" id="2_i3wga"]
+[ext_resource type="PackedScene" uid="uid://bruf4nulx38vh" path="res://reset_button/reset_button.tscn" id="3_11bpt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_865al"]
+size = Vector3(54.051, 1.48206, 9.97012)
+
+[node name="GloomyHallway" type="Node3D"]
+
+[node name="hallway2" parent="." instance=ExtResource("1_vpb2a")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0727205, 3.52044, 2.46616)
+light_energy = 10.143
+light_bake_mode = 1
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0727205, 3.52044, -3.03286)
+light_energy = 10.143
+light_bake_mode = 1
+
+[node name="JournalEntry" parent="." instance=ExtResource("2_i3wga")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.872476, -4.20637)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2346, 0.693176, 0.00367737)
+shape = SubResource("BoxShape3D_865al")
+
+[node name="ResetButton" parent="." instance=ExtResource("3_11bpt")]
