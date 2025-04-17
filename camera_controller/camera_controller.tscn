@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c88mh0li4ysca"]
 
-[ext_resource type="Script" path="res://camera_controller/camera_controller.gd" id="1_u8ror"]
+[ext_resource type="Script" uid="uid://xtqndq3ia6xh" path="res://camera_controller/camera_controller.gd" id="1_u8ror"]
 [ext_resource type="Texture2D" uid="uid://bbwf8itswx4q4" path="res://icon.svg" id="2_qvmbn"]
 [ext_resource type="PackedScene" uid="uid://b37w41nh2tdot" path="res://interactor/interactor.tscn" id="3_hmo21"]
 

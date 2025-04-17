@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bruf4nulx38vh"]
 
-[ext_resource type="Script" path="res://reset_button/reset_button.gd" id="1_82hgs"]
+[ext_resource type="Script" uid="uid://bamuthcmvspc" path="res://reset_button/reset_button.gd" id="1_82hgs"]
 
 [node name="ResetButton" type="Node3D"]
 script = ExtResource("1_82hgs")

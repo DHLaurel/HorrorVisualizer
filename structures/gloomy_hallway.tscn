@@ -1,10 +1,10 @@
 [gd_scene load_steps=32 format=3 uid="uid://fm1jst5rpa36"]
 
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_7ernp"]
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_ijok8"]
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="3_8gi8g"]
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="4_46h6s"]
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="5_kdx3g"]
+[ext_resource type="Script" uid="uid://dn6ag5ynjjds6" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_7ernp"]
+[ext_resource type="Script" uid="uid://cwcigv0nlwlbr" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_ijok8"]
+[ext_resource type="Script" uid="uid://c61xguq4lcpfj" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="3_8gi8g"]
+[ext_resource type="Script" uid="uid://3v7np5j3wr0t" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="4_46h6s"]
+[ext_resource type="Script" uid="uid://ehtf17x6n45l" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="5_kdx3g"]
 
 [sub_resource type="Resource" id="Resource_1oka2"]
 script = ExtResource("2_ijok8")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://caob475v64kde"]
 
-[ext_resource type="Script" path="res://visualizer/node_template/node_template.gd" id="1_35cd2"]
-[ext_resource type="Shader" path="res://visualizer/node_template/node_template.gdshader" id="1_y27cj"]
+[ext_resource type="Script" uid="uid://ewmmlwhwxeao" path="res://visualizer/node_template/node_template.gd" id="1_35cd2"]
+[ext_resource type="Shader" uid="uid://c0kunucp5c45f" path="res://visualizer/node_template/node_template.gdshader" id="1_y27cj"]
 [ext_resource type="Texture2D" uid="uid://dtc1m4aonxe1v" path="res://visualizer/node_template/highlighted_albedo.tres" id="2_acxdj"]
 [ext_resource type="Texture2D" uid="uid://ctp4om5qi7dvo" path="res://visualizer/node_template/normal_albedo.tres" id="2_w0pmb"]
 [ext_resource type="Texture2D" uid="uid://bawfitnlm83bb" path="res://visualizer/node_template/darkened_albedo.tres" id="4_kskuj"]
@@ -10,11 +10,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqxex"]
 render_priority = 0
 shader = ExtResource("1_y27cj")
+shader_parameter/texture_albedo = ExtResource("2_w0pmb")
 shader_parameter/time_speed = 1.0
 shader_parameter/glitch_intensity = 0.5
 shader_parameter/noise_scale = 50.0
 shader_parameter/color_shift = Vector3(0, 0, 0)
-shader_parameter/texture_albedo = ExtResource("2_w0pmb")
 
 [sub_resource type="SphereMesh" id="SphereMesh_sivl7"]
 material = SubResource("ShaderMaterial_jqxex")

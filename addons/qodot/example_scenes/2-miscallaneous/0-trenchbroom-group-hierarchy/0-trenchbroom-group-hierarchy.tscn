@@ -1,10 +1,10 @@
 [gd_scene load_steps=23 format=4 uid="uid://dfch5xdprlxpk"]
 
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1"]
+[ext_resource type="Script" uid="uid://boyhqtp5n12dq" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://qodot/game_definitions/fgd/qodot_fgd.tres" id="2"]
 [ext_resource type="Material" path="res://addons/qodot/textures/orrery/metal.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://bw7tponn4vieu" path="res://qodot/textures/base/grid.png" id="5"]
-[ext_resource type="Script" path="res://addons/qodot/game_definitions/fgd/solid_classes/rotate.gd" id="6_760ln"]
+[ext_resource type="Script" uid="uid://lhmiu12cvi6a" path="res://addons/qodot/game_definitions/fgd/solid_classes/rotate.gd" id="6_760ln"]
 [ext_resource type="Material" path="res://addons/qodot/textures/orrery/sun.tres" id="8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpb4a"]

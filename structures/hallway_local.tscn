@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bp64crgg7gl6p" path="res://structures/hallway.fbx" id="1_355at"]
 [ext_resource type="Material" uid="uid://cpd7yaylpct3b" path="res://structures/textures/walls_ceiling.tres" id="2_gcmdo"]
-[ext_resource type="Texture2D" uid="uid://cshuyxat1wpeh" path="res://qodot/textures/pbr/military-panel/military-panel_ao.png" id="2_s2n2y"]
+[ext_resource type="Texture2D" uid="uid://cshuyxat1wpeh" path="res://addons/qodot/textures/pbr/military-panel/military-panel_ao.png" id="2_s2n2y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wax4"]
 albedo_color = Color(0.115813, 0.0461831, 0.187952, 1)

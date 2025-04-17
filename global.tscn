@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://qvqsdfukt1s6"]
 
 [ext_resource type="PackedScene" uid="uid://b1pbfxarfkbqg" path="res://visualizer/visualizer.tscn" id="1_8as0g"]
-[ext_resource type="Script" path="res://global.gd" id="1_exo30"]
+[ext_resource type="Script" uid="uid://kkfdrvp5pwdk" path="res://global.gd" id="1_exo30"]
 [ext_resource type="PackedScene" uid="uid://c88mh0li4ysca" path="res://camera_controller/camera_controller.tscn" id="2_rmcyl"]
 [ext_resource type="PackedScene" uid="uid://b77kppsghffqd" path="res://hud/hud.tscn" id="4_6decj"]
-[ext_resource type="Shader" path="res://visualizer/node_template/node_template.gdshader" id="5_bfe63"]
+[ext_resource type="Shader" uid="uid://c0kunucp5c45f" path="res://visualizer/node_template/node_template.gdshader" id="5_bfe63"]
 [ext_resource type="PackedScene" uid="uid://dy5tycrb5jjfj" path="res://structures/gloomy_hallway_v2.tscn" id="6_ra1b0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uom1m"]
@@ -30,11 +30,11 @@ fill_to = Vector2(1, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_couwn"]
 render_priority = -5
 shader = ExtResource("5_bfe63")
+shader_parameter/texture_albedo = SubResource("GradientTexture2D_ypm3k")
 shader_parameter/time_speed = 1.0
 shader_parameter/glitch_intensity = 0.5
 shader_parameter/noise_scale = 50.0
 shader_parameter/color_shift = Vector3(0.1, -0.1, 0)
-shader_parameter/texture_albedo = SubResource("GradientTexture2D_ypm3k")
 
 [sub_resource type="SphereMesh" id="SphereMesh_te3uy"]
 material = SubResource("ShaderMaterial_couwn")

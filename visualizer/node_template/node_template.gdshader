@@ -41,27 +41,27 @@ vec2 glitch_distort(vec2 uv, float intensity) {
 void fragment() {
     // Get base texture color
     vec4 albedo = texture(texture_albedo, UV);
-    
+
     // Apply glitch distortion to UV coordinates
     vec2 distorted_uv = glitch_distort(UV, glitch_intensity);
-    
+
     // Sample the texture again with distorted UVs
     vec4 distorted_color = texture(texture_albedo, distorted_uv);
-    
+
     // Add color channel shift for horror effect
     vec3 shifted_color = distorted_color.rgb;
     shifted_color.r += color_shift.r * glitch_intensity;
     shifted_color.g += color_shift.g * glitch_intensity;
     shifted_color.b += color_shift.b * glitch_intensity;
-    
+
     // Add scanlines
     float scanline = sin(UV.y * 1000.0 + TIME * 5.0) * 0.1 * glitch_intensity;
     shifted_color += vec3(scanline, scanline * 0.5, scanline * 0.8);
-    
+
     // Clamp the final color to avoid over-saturation
     ALBEDO = clamp(shifted_color, 0.0, 1.0);
     ALPHA = albedo.a;
-    
+
     // Add subtle noise overlay
     float noise_value = noise(UV * noise_scale + TIME) * 0.1 * glitch_intensity;
     ALBEDO += vec3(noise_value);
